@@ -1,3 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+@layer base {
+    body {
+        @apply font-body text-[#232428]
+    }
+}
+
+
+@layer components {
+    .headerLink {
+        @apply transition opacity-75 cursor-pointer hover:opacity-100;
+    }
+
+    .headerIcon {
+        @apply cursor-pointer h-6 w-6 transition opacity-75 hover:opacity-100;
+    }
+    
+    .link {
+        @apply cursor-pointer font-medium before:absolute before:inset-x-0 before:-bottom-1.5 before:h-0.5 before:origin-left before:scale-x-0 before:transform before:rounded-bl before:bg-black before:transition-all before:duration-200 hover:before:scale-x-100 text-lg relative ;
+    }
+
+    .borderGradient{
+       background: linear-gradient(to right, #ec4899, #8b5cf6) left bottom no-repeat;
+       padding-bottom: 5px; 
+       background-size: 100% 2px;
+       text-align: center;
+    }
+
+    .tabPanel{
+        @apply  gap-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3
+    }
+
+}
