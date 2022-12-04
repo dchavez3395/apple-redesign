@@ -8,7 +8,6 @@ import {useSelector} from 'react-redux'
 import Button from "../components/Button"
 import {selectBasketItems, selectBasketTotal} from '../redux/basketSlice'
 import CheckoutProduct from '../components/CheckoutProduct'
-import Currency from "react-currency-formatter";
 import Stripe from "stripe";
 import { fetchPostJSON } from "../utils/api-helpers";
 import getStripe from '../utils/getStripe'
@@ -86,9 +85,7 @@ function Checkout() {
                         <div className='pb-4'>
                             <div className='justify-between flex'>
                                 <p>Subtotal</p>
-                                <p>
-                                    <Currency quantity={basketTotal} currency="CAD" />
-                                </p>
+                                <p>${basketTotal}.00</p>
                             </div>
                             <div className='justify-between flex'>
                                 <p>Shipping</p>
@@ -108,7 +105,7 @@ function Checkout() {
 
                         <div className='text-xl font-semibold pt-4 flex justify-between'>
                             <h4>Total</h4>
-                            <h4><Currency quantity={basketTotal} currency='CAD' /></h4>
+                            <h4>${basketTotal}.00</h4>
                         </div>
                     </div>
 
@@ -129,7 +126,7 @@ function Checkout() {
                                 <h4 className='font-semibold flex flex-col text-xl mb-4'> 
                                     Pay in full
                                     <span>
-                                        <Currency quantity={basketTotal} currency='CAD' />
+                                        CAD ${basketTotal}.00
                                     </span>
                                 </h4>
                                 <Button noIcon title='Check Out' width='w-full' loading={loading} onClick={createCheckoutSession} />

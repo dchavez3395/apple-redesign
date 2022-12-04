@@ -11,7 +11,6 @@ import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import Button from "../components/Button";
 import { useMediaQuery } from "react-responsive";
-import Currency from "react-currency-formatter";
 import { GetServerSideProps } from "next";
 import { fetchLineItems } from "../utils/fetchLineItems";
 import {useSession} from "next-auth/react"
@@ -148,9 +147,7 @@ function Success({ products }: Props) {
                   )}
                 </button>
 
-                <p className="text-xl font-medium text-black">
-                  <Currency quantity={subtotal + 20} />
-                </p>
+                <p className="text-xl font-medium text-black">{subtotal + 20}</p>
               </div>
             </div>
 
@@ -176,21 +173,14 @@ function Success({ products }: Props) {
                         </div>
                       </div>
                       <p className="flex-1">{product.description}</p>
-                      <p>
-                        <Currency
-                          quantity={product.price.unit_amount / 100}
-                          currency={product.currency}
-                        />
-                      </p>
+                      <p>$ {product.price.unit_amount / 100}.00</p>
                     </div>
                   ))}
                 </div>
                 <div className="space-y-1 py-4">
                   <div className="flex justify-between text-sm">
                     <p className="text-[gray]">Subtotal</p>
-                    <p className="font-medium">
-                      <Currency quantity={subtotal} />
-                    </p>
+                    <p className="font-medium">${subtotal}.00</p>
                   </div>
                   <div className="flex justify-between text-sm">
                     <p className="text-[gray]">Discount</p>
@@ -199,7 +189,7 @@ function Success({ products }: Props) {
                   <div className="flex justify-between text-sm">
                     <p className="text-[gray]">Shipping</p>
                     <p className="font-medium">
-                      <Currency quantity={20} currency="USD" />
+                      CAD $20
                     </p>
                   </div>
                 </div>
@@ -208,7 +198,7 @@ function Success({ products }: Props) {
                   <p className="flex items-center gap-x-2 text-xs text-[gray]">
                     CAD
                     <span className="text-xl font-medium text-black">
-                      <Currency quantity={subtotal + 20} />
+                      {subtotal + 20}
                     </span>
                   </p>
                 </div>
