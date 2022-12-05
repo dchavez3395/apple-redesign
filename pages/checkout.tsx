@@ -74,12 +74,11 @@ function Checkout() {
                 <Button title='Continue Shopping' onClick={() => router.push('/')} />
             )}
         </div>
-        {items.length > 0 && (
+            {items.length > 0 && (
             <div className='mx-5 md:mx-8'>
                 {Object.entries(groupedItemsInBasket).map(([key, items]) => (
                     <CheckoutProduct key={key} items={items} id={key} />
                 ))}
-
                 <div className='ml-auto mt-6 max-w-3xl my-12'>
                     <div className='divide-y divide-gray-300'>
                         <div className='pb-4'>

@@ -27,6 +27,11 @@ const Home = ({categories, products}: Props) => {
     .map((product) => <Product product={product} key={product._id} />);
   };
 
+  // const addOns = (category: number) => {
+  //   return products.filter((product) => product.category?._ref === categories[category]._id)
+  //   .map((product) => <Product product={product} key={product._id} />);
+  // };
+
   return (
     <div className="">
       <Head>
@@ -66,6 +71,7 @@ const Home = ({categories, products}: Props) => {
               <Tab.Panel className="tabPanel">{showProducts(2)}</Tab.Panel>
               <Tab.Panel className="tabPanel">{showProducts(3)}</Tab.Panel>
               <Tab.Panel className="tabPanel">{showProducts(4)}</Tab.Panel>
+              <Tab.Panel className="tabPanel">{showProducts(5)}</Tab.Panel>
             </Tab.Panels>
           </Tab.Group>
         </div>

@@ -7,9 +7,9 @@ export default function Landing() {
     <section className='items-center justify-between px-8 h-screen max-w-[1350px] sticky top-0 mx-auto flex'>
       <div className='space-y-8'>
         <h1 className='font-semibold text-5xl lg:text-6xl xl:text-7xl tracking-wide space-y-3'>
-            <span className='block bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500'>Powered</span>
-            <span className='block'>By Intellect</span>
-            <span className='block'>Driven By Technology</span>
+            <span className='block bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500'>Apple</span>
+            <span className='block'>The best place</span>
+            <span className='block'>To buy the products you love</span>
         </h1>
             <div className='space-x-8'>
                 <Button title='Buy Now' />

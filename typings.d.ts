@@ -19,6 +19,22 @@ interface Image {
   };
 }
 
+interface Banner {
+  _key: string;
+  _type: "banner";
+  asset: {
+    url: string;
+  };
+  id: number
+  title: string;
+  subtitle: string;
+  button1: string;
+  button2: string;
+  asset: {
+    url: string;
+  };
+}
+
 interface Product {
   _id: string;
   _createdAt: string;
